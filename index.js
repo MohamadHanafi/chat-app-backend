@@ -10,6 +10,7 @@ import { notFound, errorHandler } from './middleware/errMiddleware.js'
 
 // routes
 import userRoutes from './routes/userRoutes.js'
+import chatRoutes from './routes/chatRoutes.js'
 
 // dot env config
 dotenv.config()
@@ -33,6 +34,7 @@ app.get('/', (_req, res) => {
 })
 
 app.use('/api/v1/users', userRoutes)
+app.use('/api/v1/chats', chatRoutes)
 
 // error handlers
 app.use(errorHandler)

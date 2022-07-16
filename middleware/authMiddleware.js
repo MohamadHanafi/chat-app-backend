@@ -27,4 +27,14 @@ const protectRoute = asyncHandler(async (req, res, next) => {
   }
 })
 
-export { protectRoute }
+const authorize = (...roles) =>
+  asyncHandler(async (req, res, next) => {
+    if (roles.includes(req.user.role)) {
+      next()
+    } else {
+      res.status(401)
+      throw new Error('Not authorized')
+    }
+  })
+
+export { protectRoute, authorize }

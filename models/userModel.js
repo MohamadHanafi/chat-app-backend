@@ -19,14 +19,22 @@ const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      required: true,
       enum: ['user', 'admin'],
       default: 'user',
     },
     status: {
       type: String,
-      required: true,
+      default: 'offline',
       enum: ['online', 'busy', 'offline', 'away'],
+    },
+    avatar: {
+      type: String,
+      default: '/images/default-avatar.png',
+    },
+    about: {
+      type: String,
+      maxlength: 120,
+      default: 'write something about yourself',
     },
   },
   {

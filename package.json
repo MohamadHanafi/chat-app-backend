@@ -9,7 +9,9 @@
   "private": false,
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "db:insert-data": "node seeder.js --insert-data",
+    "db:delete-data": "node seeder.js --delete-data"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,6 +22,7 @@
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "ws": "^8.8.1"
   }
 }
